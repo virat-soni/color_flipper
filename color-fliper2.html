@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color fliper 2</title>
+</head>
+<style>
+    body{
+        transition: 0.1s;
+        user-select: none;
+        font-family: cursive;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .main{
+            text-align: center;
+            width: 40vw;
+            height: 18vh;
+            background-color: white;
+            border-radius: 5px;
+            color:sandybrown;
+            
+        }
+        #btn{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            
+        }
+</style>
+<body>
+    <div class="container"> 
+        <div class="main">
+            <p id="demo" onmouseover="go()" onmouseout="out()">#545854</p>
+            <button id="btn">Flip Color</button>
+        </div>
+    </div>
+
+    <script>
+       
+      
+         function run(){
+            let getrandomcolor = Math.floor(Math.random()*800000)+100000;
+            let getcolor= "#" + getrandomcolor;
+            document.body.style.backgroundColor = getcolor;
+            document.getElementById('demo').innerText = getcolor;
+            document.getElementById('btn').style.backgroundColor = getcolor
+            document.getElementById('demo').style.color = getcolor
+          
+         }
+           document.getElementById('btn').addEventListener('click', run)
+         run();
+        function go(){
+            document.getElementById('demo').innerText = "This Is Hex Color";
+        }
+        
+        
+    </script>
+</body>
+</html>
